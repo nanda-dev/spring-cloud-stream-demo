@@ -1,0 +1,16 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: processor-app
+
+  cloud:
+    stream:
+      bindings:
+        output:
+          group: west
+          destination: demo-processed
+        input:
+          group: haliho
+          destination: demo

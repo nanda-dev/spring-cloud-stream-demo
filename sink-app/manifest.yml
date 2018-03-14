@@ -1,0 +1,8 @@
+---
+applications:
+- name: sink-app  
+  path: target\sink-app-0.0.1-SNAPSHOT.jar
+  memory: 640M
+  instances: 1
+  random-route: true  
+  services:    - rabbit-mq

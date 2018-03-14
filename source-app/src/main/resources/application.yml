@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  integration:
+    poller:
+      fixed-delay: 2000
+  cloud:
+    stream:
+      bindings:
+        output:
+          group: west
+          destination: demo
+          producer:
+            required-groups: west
+  application:
+    name: source-app
