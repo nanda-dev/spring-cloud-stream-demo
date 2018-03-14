@@ -5,7 +5,7 @@ springfox:
         path: /api-docs
 
 server:
-  contextPath: /api
+  #contextPath: /api
   port: 8081
   
 spring:
