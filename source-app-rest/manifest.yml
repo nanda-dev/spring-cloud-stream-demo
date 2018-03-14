@@ -1,0 +1,8 @@
+---
+applications:
+- name: source-app
+  path: target\source-app-rest-0.0.1-SNAPSHOT.jar
+  memory: 640M
+  instances: 1
+  random-route: true
+  services:    - rabbit-mq

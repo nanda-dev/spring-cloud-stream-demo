@@ -1,0 +1,30 @@
+springfox:
+  documentation:
+    swagger:
+      v2:
+        path: /api-docs
+
+server:
+  contextPath: /api
+  port: 8081
+  
+spring:
+  jackson:
+    date-format: io.swagger.RFC3339DateFormat
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: false
+
+  application:
+    name: source-app
+
+  cloud:
+    stream:
+      bindings:
+        output:
+          group: west
+          destination: demo
+          producer:
+            required-groups: west
+      default:
+        contentType: application/json
+
