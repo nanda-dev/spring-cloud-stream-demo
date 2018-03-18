@@ -1,0 +1,9 @@
+---
+applications:
+- name: device-service
+  memory: 1G
+  instances: 1
+  random-route: true
+  path: target/device-service-0.0.1-SNAPSHOT.jar
+  services:
+  - rabbit-mq
