@@ -21,10 +21,16 @@ spring:
     stream:
       bindings:
         output:
-          group: west
-          destination: demo
-          producer:
-            required-groups: west
+          #group: west
+          destination: activation-queue
+          #producer:
+            #required-groups: west
       default:
         contentType: application/json
+    aws:
+      credentials:
+        accessKey:
+        secretKey:
+      region:
+        static:
 

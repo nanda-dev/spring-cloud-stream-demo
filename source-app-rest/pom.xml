@@ -58,7 +58,8 @@
         </dependency>
         <dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+			<artifactId>spring-cloud-stream-binder-sqs</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
         
         <!--SpringFox dependencies -->
