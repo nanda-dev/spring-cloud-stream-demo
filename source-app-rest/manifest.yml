@@ -5,8 +5,9 @@ applications:
   memory: 1G
   instances: 1
   random-route: true
-  #services:    #- rabbit-mq
+  #services:
+    #- rabbit-mq
   env:
-    CLOUD_AWS_CREDENTIALS_ACCESSKEY: AKIAIFKYXZLOCMFRDL2A
-    CLOUD_AWS_CREDENTIALS_SECRETKEY: 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
+    CLOUD_AWS_CREDENTIALS_ACCESSKEY: 
+    CLOUD_AWS_CREDENTIALS_SECRETKEY: 
     CLOUD_AWS_REGION_STATIC: us-east-2
