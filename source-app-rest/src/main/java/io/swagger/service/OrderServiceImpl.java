@@ -1,11 +1,14 @@
 package io.swagger.service;
 
+import java.util.Collections;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.messaging.Source;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.support.MessageBuilder;
 
 import io.swagger.model.CreateOrderRequest;
@@ -32,6 +35,8 @@ public class OrderServiceImpl implements OrderService {
 		
 		logger.info("Order {} created. Notify downstream apps...", resp.getOrderId());
 		msgSource.output().send(MessageBuilder.withPayload("ORDER_TO_PROCESS:" + resp.getOrderId()).build());
+		//msgSource.output().send(MessageBuilder.createMessage("ORDER_TO_PROCESS: 1111", 
+															//new MessageHeaders(Collections.singletonMap(MessageHeaders.CONTENT_TYPE, (Object) "text/plain;charset=UTF-8"))));
 		
 		return resp;
 	}

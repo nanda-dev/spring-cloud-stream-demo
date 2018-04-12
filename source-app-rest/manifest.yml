@@ -2,7 +2,11 @@
 applications:
 - name: source-app
   path: target\source-app-rest-0.0.1-SNAPSHOT.jar
-  memory: 640M
+  memory: 1G
   instances: 1
   random-route: true
-  services:    - rabbit-mq
+  #services:    #- rabbit-mq
+  env:    
+    CLOUD_AWS_CREDENTIALS_ACCESSKEY: 
+    CLOUD_AWS_CREDENTIALS_SECRETKEY: 
+    CLOUD_AWS_REGION_STATIC: us-east-2

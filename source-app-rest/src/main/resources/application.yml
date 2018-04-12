@@ -21,10 +21,24 @@ spring:
     stream:
       bindings:
         output:
-          group: west
-          destination: demo
-          producer:
-            required-groups: west
+          #group: west
+          destination: activation-queue
+          #destination: demo
+          #producer:
+            #required-groups: west
+          #contentType: text/plain;charset=UTF-8
       default:
         contentType: application/json
+
+    aws:
+      credentials:
+        accessKey: 
+        secretKey: 
+      region:
+        static: 
+        
+#cloud.aws.credentials.secretKey=
+
+#Specify the region if not running in an EC2 instance.
+#cloud.aws.region.static=us-east-2
 
